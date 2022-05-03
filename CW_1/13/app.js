@@ -1,6 +1,12 @@
-const abc = +prompt();
-let a = (Math.floor(abc / 100) % 10);
-let b = (Math.floor(abc / 10)) % 10;
-let c = abc % 10;
+let a = +prompt(`Введите число`);
+let b = +prompt(`Введите число`);
+let c = +prompt(`Введите число`);
+let array = [a, b, c];
+let result = 0;
 
-console.log(`Сумма цифр = ${a+b+c}`);
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+        result += array[i];
+    }
+}
+console.log(result);

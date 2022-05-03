@@ -1,6 +1,14 @@
-const abc = +prompt();
-let a = (Math.floor(abc / 100) % 10);
-let b = (Math.floor(abc / 10)) % 10;
-let c = abc % 10;
+let fib = +prompt(`Введите числовое значение`);
+let arr = [];
 
-console.log(`Сумма цифр = ${a+b+c}`);
+if (isNaN(fib) === true) {
+    alert(`Введите числовое значение`)
+}
+for (let i = 0; i < fib; i++) {
+    if (i > 2) {
+        arr.push(arr[i - 2] + arr[i - 1]);
+    } else {
+        arr.push(i);
+    }
+}
+alert(arr); 

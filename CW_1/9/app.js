@@ -1,5 +1,5 @@
-let a = prompt().trim().toLowerCase();
-let b = prompt().trim().toLowerCase();
+let a = prompt().trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,"");
+let b = prompt().trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,"");
 let arra = a.split("").sort().join();
 let arrb = b.split("").sort().join();
 

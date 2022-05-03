@@ -1,12 +1,8 @@
-let a = +prompt();
-let b = +prompt();
-let c = +prompt();
+let a = +prompt(`Введите сторону а`);
+let b = +prompt(`Введите сторону b`);
+let c = +prompt(`Введите сторону c`);
 
-if ((a > 0) && (b > 0) && (c > 0) && (a + c > b)) {
-    console.log(`YES`);
-} else if ((a > 0) && (b > 0) && (c > 0) && (b + c > a)) {
-    console.log(`YES`);
-} else if ((a > 0) && (b > 0) && (c > 0) && (a + b > c)) {
+if (((a + b) > c) && ((b + c) > a) && ((a + c) > b)) {
     console.log(`YES`);
 } else {
     console.log(`NO`);

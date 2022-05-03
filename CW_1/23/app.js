@@ -1,4 +1,4 @@
-let str = prompt(``);
+let str = prompt(``).toLowerCase().trim();
 let glasn = ['a', 'e', `i`, `o`, `u`];
 let iter = 0;
 
@@ -8,6 +8,7 @@ if (isNaN(str) === false) {
     for (let i = 0; i < str.length; i++) {
         if (glasn.includes(str[i])) {
             iter++
-        } 
-    } console.log(`Количество гласных: ${iter}`);
-} 
+        }
+    }
+    console.log(`Количество гласных: ${iter}`);
+}
