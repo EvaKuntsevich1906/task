@@ -15,3 +15,4 @@ if (isNaN(str) === false) {
 } else if (str === `/`) {
     console.log(a / b);
 }
+
