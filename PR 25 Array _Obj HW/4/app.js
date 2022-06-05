@@ -21,6 +21,6 @@ let arr = [
 
         }];
 
-        const objSec = obj.filter (el => el.name`Hanna`);
+        let objSec = arr.filter(el => el[name] !==`Hanna`);
         console.log(objSec);
 

@@ -10,5 +10,7 @@
  },
 n = 0;
 for ( let val in obj) {
- n+= 1
+    if (!isNan.obj["val"]){
+        n+= 1
+    }
 } console.log(n);

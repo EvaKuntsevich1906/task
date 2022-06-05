@@ -4,7 +4,6 @@ let db = [
     {"id": "go", "label": "GO", "category": "programmingLanguages", "priority":3},
     {"id": "python", "label": "C++", "category": "programmingLanguages", "priority":4},
 ]
-
 let input = {"id": "javascript", "label": "C++", "category": "programmingLanguages", "priority":4}
 let poisk = db.filter(el => el.id !== input.id) 
 if (db.length !== poisk.length) {

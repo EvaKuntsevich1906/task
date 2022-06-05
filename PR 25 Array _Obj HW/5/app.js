@@ -10,5 +10,5 @@ let arr  = [
     {age: 10},
 ];
 
-const newArr = arr.map (el => {
-    return  {age: el *2})
+const newArr = arr.map(Element => Element["age"] *2)
+console.log(newArr);
