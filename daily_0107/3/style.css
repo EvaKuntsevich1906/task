@@ -1,0 +1,6 @@
+.img {
+    background-image: url(./cat.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
