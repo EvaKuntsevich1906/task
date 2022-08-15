@@ -26,7 +26,6 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     try {
         const obj = req.body
-        console.log(obj);
         const user = createData(obj)
         res.status(200).send(user)
     } catch (err) {

@@ -1,17 +1,17 @@
 const data = require("../storage/data");
-const filePath = "../storage/data";
+const filePath = ".src/storage/data.json";
 const readJSONFile = () => {
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 const getDataById = (id) => {
-    const parsedData = readJSONFile(id);
+    const parsedData = readJSONFile();
     const user = parsedData.filter((key) => key.id === +id);
     if (!user.length) throw new Error("Not Found")
     return user
 }
 
 const createData = (obj) => {
-    const parsedData = readJSONFile(obj);
+    const parsedData = readJSONFile();
     if (obj.hasOwnProperty(`name`) && obj.hasOwnProperty(`surname`) && obj.hasOwnProperty(`email`) && obj.hasOwnProperty(`pwd`)) {
         parsedData.push(obj)
     } else {
@@ -21,14 +21,14 @@ const createData = (obj) => {
 }
 
 const updateData = (id, user) => {
-    const parsedData = readJSONFile(id, user);
+    const parsedData = readJSONFile();
     const FiltredValue = parsedData.filter((key) => key.id != +id);
     if (FiltredValue.length === parsedData.length) throw new Error("Not Found")
     FiltredValue.push(user)
     return FiltredValue
 }
 const deleteApi = (id) => {
-    const parsedData = readJSONFile(id);
+    const parsedData = readJSONFile();
     const filtredData = parsedData.filter((key) => key.id != +id);
     return filtredData
 }
