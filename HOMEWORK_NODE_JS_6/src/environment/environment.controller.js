@@ -4,7 +4,8 @@ const {
     getAllEnvironment,
     getAllEnvironmentByID,
     updateEnvironmentByID,
-    deleteEnvironmentByID
+    deleteEnvironmentByID,
+    patchEnvironmentByID
 } = require("./environment.service")
 const router = express.Router();
 
@@ -56,12 +57,24 @@ router.put("/:id", async (req, res) => {
         res.status(404).send(err.message)
     }
 })
+
+router.patch("/:id", async (req, res) => {
+    try {
+        const {
+            id
+        } = req.params;
+        const patchedEnvironmentByID = await patchEnvironmentByID(id, req.body)
+        res.status(200).send(patchedEnvironmentByID)
+    } catch (err) {
+        res.status(404).send(err.message)
+    }
+})
 router.delete("/:id", async (req, res) => {
     try {
         const {
             id
         } = req.params;
-        const deletedEnvinronmentByID =  await deleteEnvironmentByID (id)
+        const deletedEnvinronmentByID = await deleteEnvironmentByID(id)
         res.status(200).send(deletedEnvinronmentByID)
     } catch (err) {
         res.status(200).send(err.message)

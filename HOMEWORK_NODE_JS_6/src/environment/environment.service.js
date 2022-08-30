@@ -3,6 +3,7 @@ const {
     getAllEnvironmentDB,
     getAllEnvironmentByIDDB,
     updateEnvironmentByIDDB,
+    patchEnvironmentByIDDB,
     deletedEnvinronmentByIDDB
 } = require("./environment.repository")
 
@@ -24,8 +25,12 @@ const updateEnvironmentByID = async (id, label, category, priority) => {
     const value = await updateEnvironmentByIDDB(id, label, category, priority)
     return value
 }
-const  deleteEnvironmentByID = async (id) => {
-    const value = await  deletedEnvinronmentByIDDB(id)
+const patchEnvironmentByID = async (id, obj) => {
+    const value = await patchEnvironmentByIDDB(id, obj)
+    return value
+}
+const deleteEnvironmentByID = async (id) => {
+    const value = await deletedEnvinronmentByIDDB(id)
     return value
 }
 
@@ -33,6 +38,7 @@ module.exports = {
     createEnvironment,
     getAllEnvironment,
     getAllEnvironmentByID,
-    updateEnvironmentByID,  
-    deleteEnvironmentByID
+    updateEnvironmentByID,
+    deleteEnvironmentByID,
+    patchEnvironmentByID
 }
