@@ -1,3 +1,0 @@
-let txt = prompt(``).replaceALL(/\<,></,"")
-
- 
